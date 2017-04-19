@@ -10,3 +10,6 @@ function read_fan_speed {
     var_fan_speed = $(nvidia-settings -q GPUCurrentFanSpeed | grep -E "GPUCurrentFanSpeed" | grep -E "fan:0" | grep -E "[0-9]{1,3}*.$" --only-matching | grep -E "[0-9]*" --only-matching)
 }
 
+printf "${var_gpu_temp}\n"
+printf "${var_fan_speed}\n"
+
